@@ -1,0 +1,53 @@
+Sprachen: alle lateinische Sprachen
+Video Tutor
+
+chatgpt pricing -> vision
+
+langchain - framework auf openAI via API
+
+basic prompt -> jedes Mal wieder reinfüttern
+- kleiner prompt
+- max tokens
+
+eigener "agent" konstruieren
+
+output tokes > input tokens (1:2)
+
+system finger print - Reproduzierbarkeit
+
+temperature OR top_p_value
+top_p_value - top wahrscheinlichen embeddings bekommen höheres Gewicht, wobei die wenigen wahrscheinlichen runtergesetzt werden
+
+7 likert Skala correlationen
+Difference Score
+
+
+### get openAI callchain
+
+
+chatgpt 4 // nicht 4o (multi-modal)
+
+
+prompting:
+- klar strukturiert
+- mit Satzzeichen / unterteilen
+
+
+- LLM are few shot learners
+- LLM are one shot learners
+
+impersionating verbessert Aufgabe?
+> im narrativen Kontext ist besser
+
+
+Reasoning - think out loud
+Imagine you are....
+
+
+tree-map über PCA
+PCA / cluster analysis
+
+
+Natural Language Toolkit
+- lemma
+- part of speech tag
