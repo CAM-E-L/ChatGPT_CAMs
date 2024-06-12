@@ -123,7 +123,6 @@ def basic_API_call(
     model_name="gpt-4",
     max_tokens=150,
 ):
-
     prompt = PromptTemplate(template=template, input_variables=input_variables)
     # top_p_value = float("0")
     seed = 123
