@@ -2,7 +2,6 @@
 import os
 import json
 from pathlib import Path
-import cam2imageGUI as GUI
 
 
 ## Returns a list of all files in a folder and (recursively) all its subfolders. 

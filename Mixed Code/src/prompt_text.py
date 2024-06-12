@@ -2,6 +2,9 @@
 prompt template
 """
 
+general = "logic of CAM picture"
+specfic = "TOPIC (changed by user)"
+
 test_prompt_text = """
 A person is asked to describe a situation based on a few words:
 """
