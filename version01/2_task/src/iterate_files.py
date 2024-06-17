@@ -20,7 +20,7 @@ def iterate_files(directory_path):
                         "content": [
                             {
                                 "type": "text",
-                                "text": "You are a helpful assistant. Describe what you can see in this image, paying attention to key concepts and relationship between them. In the end provide a summary of what you have seen"
+                                "text": "You are a helpful assistant. Provide a textual summary about what you can see in this image without providing details or single words, paying attention to key concepts and relationship between them. Only a summary of the picture with less than 200 words is needed. The picture is in German and the topic is the experience of employees in a company about open space."
                             },
                             {
                                 "type": "image_url",
@@ -31,7 +31,7 @@ def iterate_files(directory_path):
                         ]
                     }
                 ],
-                "max_tokens": 300
+                "max_tokens": 600
             }
 
             # Send the request to the OpenAI API
@@ -42,4 +42,6 @@ def iterate_files(directory_path):
             print(f"Response for {filename}:")
             # print(f"Response:")
             print(description)
+            print("\n" + "="*20 + "\n")
+            print(response.json())
             print("\n" + "="*50 + "\n")

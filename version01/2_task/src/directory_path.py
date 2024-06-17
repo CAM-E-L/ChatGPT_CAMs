@@ -1,0 +1,1 @@
+directory_path = "C:/DATEN/PHD/Project_CAMsLLM/version01/2_task/test_pictures"
