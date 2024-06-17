@@ -531,6 +531,7 @@ const languageFile_chinese = [
 
 
 
+
 const languageFile_european = [
     {
         "X_identifier": "ls_01",
@@ -911,10 +912,10 @@ const languageFile_european = [
     {
         "X_identifier": "nd_04",
         "X_location": "nodes dialog (nd)",
-        "english": "Comment",
-        "german": "Kommentar",
-        "french": "Commentaire",
-        "spanish": "Comentario"
+        "english": "Comment:",
+        "german": "Kommentar:",
+        "french": "Commentaire:",
+        "spanish": "Comentario:"
     },
     {
         "X_identifier": "nd_05buttonDelete",

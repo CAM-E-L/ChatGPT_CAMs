@@ -25,16 +25,12 @@ $(document).on("mousedown", ".node", function (event) {
                 document.getElementById("checkboxAmbivalent").checked = false;
                 document.getElementById("nodeSlider").disabled = false;
 
-                backendRedColorNodeSlider.style.backgroundColor =
-                    "hsl(0, 50%, 60%)";
-                backendGreenColorNodeSlider.style.backgroundColor =
-                    "hsl(110, 50%, 60%)";
+                backendRedColorNodeSlider.style.backgroundColor = COLOUR.red3; // "hsl(0, 50%, 60%)";
+                backendGreenColorNodeSlider.style.backgroundColor = COLOUR.green3; // "hsl(110, 50%, 60%)";
             } else if (CAM.currentNode.value == 10) {
                 document.getElementById("nodeSlider").value = 4;
-                backendRedColorNodeSlider.style.backgroundColor =
-                    "hsl(0, 50%, 60%)";
-                backendGreenColorNodeSlider.style.backgroundColor =
-                    "hsl(110, 50%, 60%)";
+                backendRedColorNodeSlider.style.backgroundColor = COLOUR.red3; // "hsl(0, 50%, 60%)";
+                backendGreenColorNodeSlider.style.backgroundColor = COLOUR.green3; // "hsl(110, 50%, 60%)";
 
                 document.getElementById("checkboxAmbivalent").checked = true;
                 document.getElementById("nodeSlider").disabled = true;
@@ -43,16 +39,13 @@ $(document).on("mousedown", ".node", function (event) {
                 document.getElementById("nodeSlider").disabled = false;
                 if (CAM.currentNode.value == -1) {
                     document.getElementById("nodeSlider").value = 3;
-                    backendRedColorNodeSlider.style.backgroundColor =
-                        "hsl(0, 50%, 60%)";
+                    backendRedColorNodeSlider.style.backgroundColor = COLOUR.red3; // "hsl(0, 50%, 60%)";
                 } else if (CAM.currentNode.value == -2) {
                     document.getElementById("nodeSlider").value = 2;
-                    backendRedColorNodeSlider.style.backgroundColor =
-                        "hsl(0, 50%, 50%)";
+                    backendRedColorNodeSlider.style.backgroundColor = COLOUR.red2; // "hsl(0, 50%, 50%)";
                 } else if (CAM.currentNode.value == -3) {
                     document.getElementById("nodeSlider").value = 1;
-                    backendRedColorNodeSlider.style.backgroundColor =
-                        "hsl(0, 50%, 40%)";
+                    backendRedColorNodeSlider.style.backgroundColor = COLOUR.red1; // "hsl(0, 50%, 40%)";
                 }
             } else if (
                 CAM.currentNode.value > 0 &&
@@ -62,16 +55,13 @@ $(document).on("mousedown", ".node", function (event) {
                 document.getElementById("nodeSlider").disabled = false;
                 if (CAM.currentNode.value == 1) {
                     document.getElementById("nodeSlider").value = 5;
-                    backendGreenColorNodeSlider.style.backgroundColor =
-                        "hsl(110, 50%, 60%)";
+                    backendGreenColorNodeSlider.style.backgroundColor = COLOUR.green3; // "hsl(110, 50%, 60%)";
                 } else if (CAM.currentNode.value == 2) {
                     document.getElementById("nodeSlider").value = 6;
-                    backendGreenColorNodeSlider.style.backgroundColor =
-                        "hsl(110, 50%, 50%)";
+                    backendGreenColorNodeSlider.style.backgroundColor = COLOUR.green2; // "hsl(110, 50%, 50%)";
                 } else if (CAM.currentNode.value == 3) {
                     document.getElementById("nodeSlider").value = 7;
-                    backendGreenColorNodeSlider.style.backgroundColor =
-                        "hsl(110, 50%, 40%)";
+                    backendGreenColorNodeSlider.style.backgroundColor = COLOUR.green1;  // "hsl(110, 100%, 40%)";
                 }
             }
 

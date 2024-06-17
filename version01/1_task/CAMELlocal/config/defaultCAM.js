@@ -24,6 +24,21 @@ function defaultCAM() {
   if (!usingMangoDB) {
     /* MAKE CHANGES: start*/
 
+/*
+    CAM.addElement(new NodeCAM(0, "aaa", {
+      x: 800,
+      y: 400
+    }, true, true, true));
+
+
+
+    var connector1 = new ConnectorCAM();
+    connector1.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, true);
+    connector1.value = 3;
+    connector1.intensity = connector1.value * IncreaseSliderIntensity;
+    connector1.isDeletable = false;
+    CAM.addElement(connector1);
+*/
 
     /* MAKE Changes: end*/
   } else {

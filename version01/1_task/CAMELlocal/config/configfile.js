@@ -4,7 +4,7 @@ var config = {
     CAMproject: "projectName", // "proj_" + uuid.v4(), // necessary for server (see ERM)
     ConNumNodes: 1, // number of nodes necessary to draw
     
-    hideArrows: false, // if false = possible to draw arrows
+    hideArrows: true, // if false = possible to draw arrows
     BidirectionalDefault: false, // if true the default connection is bidirectional
 
     hideAmbivalent: false, // if false = possible to draw ambivalent node
