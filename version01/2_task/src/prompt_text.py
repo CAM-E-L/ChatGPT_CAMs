@@ -10,6 +10,11 @@ specific_topic = """
 People had the task of reflecting on their experiences of a newly introduced "open space" office (new office). Thereby two networks side by side were drawn, the left about the past expectations regarding the new office ("damalige Erwartungen ans neue Büro"), the right about the current experiences ("aktuelles Erleben im neuen Büro").
 """
 
+# set a specific task
+specific_topic_task = """
+Compare the two drawn networks and compare them with each other.
+"""
+
 
 # explain data structure of CAMs (picture approach)
 prompt = """
@@ -27,9 +32,13 @@ In the picture you see a so called "Cognitive-Affective Map" (CAM), whereby a CA
 {specific_topic}>
 
 <Task:
-1) Write a text no longer than 200 words describing the CAM, consider thereby the specific topic.
+1) Write a text no longer than 300 words describing the CAM, consider thereby the specific topic.
 2) Write neutrally in the third person.
 3) Start with a short introductory sentence that describes the topic.
-4) Wirte in {language}
+4) Do not explain the data structure of CAMs.
+5) Focus on the drawn concepts and not on the drawn connections.
+6) At the end provide a summary paragraph of the drawn CAM.
+7) {specific_topic_task}
+8) Write in {language}.
 >
     Answer: """
