@@ -32,6 +32,7 @@ $(function () {
 
         /* draw CAM */
         arrayIDs = [];
+        let counter = 0;
         for (var i = 0; i < jsonObj.nodes.length; i++) {
             var elementNode = jsonObj.nodes[i];
             //console.log(elementNode);
@@ -51,6 +52,8 @@ $(function () {
                     )
                 );
 
+                CAM.nodes[counter].id = elementNode.id;
+                counter++;
                 // CAM.nodes[i].id = elementNode.id; // add ID of former node
                 // CAM.nodes[i].isDraggable = true; // moveable
                 arrayIDs.push(elementNode.id);
@@ -69,7 +72,7 @@ $(function () {
                 connector1.establishConnection(
                     CAM.nodes[arrayIDs.indexOf(elementConnector.source)],
                     CAM.nodes[arrayIDs.indexOf(elementConnector.target)],
-                    elementConnector.intensity,
+                    elementConnector.intensity * 1,
                     elementConnector.agreement
                 );
                 connector1.isBidirectional = elementConnector.isBidirectional;

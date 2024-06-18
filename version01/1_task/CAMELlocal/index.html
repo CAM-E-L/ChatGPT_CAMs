@@ -278,16 +278,35 @@ $(function () {
         document.head.appendChild(script);
       })();
 
+      /*
       (function () {
         const script = document.createElement("script");
         script.src = "./src/js/frontend/colours.js";
         script.async = false;
         document.head.appendChild(script);
       })();
+*/
 
+(function () {
+        const script = document.createElement("script");
+        script.src = "./extensions/ChatGPT/colours.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+
+
+      /*
       (function () {
         const script = document.createElement("script");
         script.src = "./src/js/frontend/draw.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+*/
+
+(function () {
+        const script = document.createElement("script");
+        script.src = "./extensions/ChatGPT/draw.js";
         script.async = false;
         document.head.appendChild(script);
       })();

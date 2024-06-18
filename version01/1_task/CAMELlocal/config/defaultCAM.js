@@ -24,13 +24,26 @@ function defaultCAM() {
   if (!usingMangoDB) {
     /* MAKE CHANGES: start*/
 
-/*
+
     CAM.addElement(new NodeCAM(0, "aaa", {
       x: 800,
       y: 400
     }, true, true, true));
 
+    CAM.addElement(new NodeCAM(3, "Long sentence wildlife", {
+      x: 600,
+      y: 400
+    }, true, true, true));
 
+    CAM.addElement(new NodeCAM(-3, "bbb", {
+      x: 200,
+      y: 300
+    }, true, true, true));
+
+    CAM.addElement(new NodeCAM(10, "Superlong sentence wildlife", {
+      x: 400,
+      y: 300
+    }, true, true, true));
 
     var connector1 = new ConnectorCAM();
     connector1.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, true);
@@ -38,7 +51,22 @@ function defaultCAM() {
     connector1.intensity = connector1.value * IncreaseSliderIntensity;
     connector1.isDeletable = false;
     CAM.addElement(connector1);
-*/
+
+
+    var connector1 = new ConnectorCAM();
+    connector1.establishConnection(CAM.nodes[1], CAM.nodes[2], IncreaseSliderIntensity, true);
+    connector1.value = 6;
+    connector1.intensity = connector1.value * IncreaseSliderIntensity;
+    connector1.isDeletable = false;
+    CAM.addElement(connector1);
+
+    var connector1 = new ConnectorCAM();
+    connector1.establishConnection(CAM.nodes[1], CAM.nodes[3], IncreaseSliderIntensity, true);
+    connector1.value = 3;
+    connector1.agreement = false;
+    connector1.intensity = connector1.value * IncreaseSliderIntensity;
+    connector1.isDeletable = false;
+    CAM.addElement(connector1);
 
     /* MAKE Changes: end*/
   } else {
