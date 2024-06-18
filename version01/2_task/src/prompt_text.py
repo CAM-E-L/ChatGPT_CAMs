@@ -12,7 +12,7 @@ People had the task of reflecting on their experiences of a newly introduced "op
 
 # set a specific task
 specific_topic_task = """
-Compare the two drawn networks and compare them with each other.
+Explain the two drawn networks separately and compare them with each other.
 """
 
 
