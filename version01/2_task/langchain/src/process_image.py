@@ -7,7 +7,7 @@ from src.llm import chain
 def process_images(directory):
     descriptions = []
     for filename in os.listdir(directory):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
+        if filename.endswith(".jpg") or filename.endswith(".png") or filename.endswith(".svg"):
             image_path = os.path.join(directory, filename)
             image_base64 = encode_image_to_base64(image_path)
             response = chain.run(initial_prompt=initial_prompt, image_base64=image_base64)
@@ -17,12 +17,6 @@ def process_images(directory):
         #  a PNG file will result in a larger Base64-encoded string compared to an SVG file of 
         # the same visual content. SVG’s text-based and scalable nature generally leads to smaller 
         # initial file sizes and therefore smaller Base64-encoded sizes.
-
-        # if filename.endswith(".svg"):
-        #     image_path = os.path.join(directory, filename)
-        #     image_base64 = encode_image_to_base64(image_path)
-        #     response = chain.run(initial_prompt=initial_prompt, image_base64=image_base64)
-        #     descriptions.append({"filename": filename, "description": response})
     
     # print(descriptions)
     return descriptions   
