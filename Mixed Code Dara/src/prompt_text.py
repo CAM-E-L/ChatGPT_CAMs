@@ -1,24 +1,23 @@
 """ 
 prompt template
 """
-### DEFAULTS:
+
 # set language of output
-language = "English"
+language = "German"
 
-# explain the specific topic of the CAM (needed)
-specific_topic = None
+# explain the specific topic of the CAM
+specific_topic = """
+People had the task of reflecting on their experiences of a newly introduced "open space" office (new office). Thereby two networks side by side were drawn, the left about the past expectations regarding the new office ("damalige Erwartungen ans neue Büro"), the right about the current experiences ("aktuelles Erleben im neuen Büro").
+"""
 
-# set a specific task (optional)
-specific_topic_task = None
+# set a specific task
+specific_topic_task = """
+Explain the two drawn networks separately and compare them with each other.
+"""
 
 
 # explain data structure of CAMs (picture approach)
-def get_prompt(language, specific_topic, specific_topic_task):
-    if specific_topic is None:
-        raise ValueError("specific_topic cannot be None")
-    
-    task_text = f"8) {specific_topic_task}" if specific_topic_task else ""
-    return f"""
+prompt = """
 
 <Data Structure:
 In the picture you see a so called "Cognitive-Affective Map" (CAM), whereby a CAM can be considered as a specific form of mind map drawn by a person regarding a specific topic. There a different elements in the CAM, which you should consider: 
@@ -39,8 +38,7 @@ In the picture you see a so called "Cognitive-Affective Map" (CAM), whereby a CA
 4) Do not explain the data structure of CAMs.
 5) Focus on the drawn concepts and not on the drawn connections.
 6) At the end provide a summary paragraph of the drawn CAM.
-7) Write in {language}.
-{task_text}
+7) {specific_topic_task}
+8) Write in {language}.
 >
-
     Answer: """
