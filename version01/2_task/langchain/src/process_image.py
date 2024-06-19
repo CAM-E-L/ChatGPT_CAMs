@@ -1,16 +1,16 @@
 
 import os
 from src.encode_image import encode_image_to_base64
-from src.initial_prompt import initial_prompt
+# from src.initial_prompt import initial_prompt
 from src.llm import chain
 
-def process_images(directory):
+def process_images(directory, prompt):
     descriptions = []
     for filename in os.listdir(directory):
         if filename.endswith(".jpg") or filename.endswith(".png") or filename.endswith(".svg"):
             image_path = os.path.join(directory, filename)
             image_base64 = encode_image_to_base64(image_path)
-            response = chain.run(initial_prompt=initial_prompt, image_base64=image_base64)
+            response = chain.run(initial_prompt=prompt, image_base64=image_base64)
             descriptions.append({"filename": filename, "description": response})
 
         # In most cases, due to the differences in how PNG and SVG handle image data,
