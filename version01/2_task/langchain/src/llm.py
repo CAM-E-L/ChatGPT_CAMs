@@ -1,8 +1,4 @@
-from langchain import PromptTemplate, LLMChain
 from langchain_openai import ChatOpenAI
+from src.API_Key import OpenAI_API_KEY
 
-
-llm = ChatOpenAI(model='gpt-4o', openai_api_key='openai_api_key', max_tokens=500)
-
-prompt_template = PromptTemplate(template="{initial_prompt}\n\nImage: {image_base64}", input_variables=["initial_prompt", "image_base64"])
-chain = LLMChain(prompt=prompt_template, llm=llm)
+chat_model = ChatOpenAI(model='gpt-4o', openai_api_key= OpenAI_API_KEY, max_tokens=500)
