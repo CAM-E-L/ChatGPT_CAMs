@@ -1,47 +1,38 @@
-import os
+import os, openai
+import pandas as pd
+from langchain.schema import HumanMessage, SystemMessage
+from datetime import datetime
+
+from src.initial_prompt import initial_prompt
+from src.llm import chat_model
+from src.token_counter import count_tokens
 from src.encode_image import encode_image
-import requests
-from src.headers import headers
 
-def iterate_files(directory_path):
-    for filename in os.listdir(directory_path):
-        if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
-            image_path = os.path.join(directory_path, filename)
-            
-            # Encode the image
-            base64_image = encode_image(image_path)
+def process_images_directory(directory):
 
-            # Prepare the payload
-            payload = {
-                "model": "gpt-4o",
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": "You are a helpful assistant. Provide a textual summary about what you can see in this image without providing details or single words, paying attention to key concepts and relationship between them. Only a summary of the picture with less than 200 words is needed. The picture is in German and the topic is the experience of employees in a company about open space."
-                            },
-                            {
-                                "type": "image_url",
-                                "image_url": {
-                                    "url": f"data:image/jpeg;base64,{base64_image}"
-                                }
-                            }
-                        ]
-                    }
-                ],
-                "max_tokens": 600
-            }
+    memory = initial_prompt
+    results = []
+    
+    for image_file in os.listdir(directory):
+        if image_file.lower().endswith(('png', 'jpg', 'svg')):
+            image_path = os.path.join(directory, image_file)
+            encoded_image = encode_image(image_path)
+        
+            description, memory = get_image_description(encoded_image, memory)           
+            results.append([image_file, description])
+    
+    df = pd.DataFrame(results, columns=['CAM Name', 'Beschreibung'])
+    csv_path = os.path.join(directory, f"CAM_Beschreibung_{datetime.now()}.csv")
+    df.to_csv(csv_path, index=False)
 
-            # Send the request to the OpenAI API
-            response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-            description = response.json()['choices'][0]['message']['content']
+def get_image_description(encoded_image, memory):
 
-            # Print the response
-            print(f"Response for {filename}:")
-            # print(f"Response:")
-            print(description)
-            print("\n" + "="*20 + "\n")
-            print(response.json())
-            print("\n" + "="*50 + "\n")
+    messages = [
+        SystemMessage(content=memory),
+        HumanMessage(content=f"{encoded_image}")
+    ]
+
+    response = chat_model.invoke(input=messages)
+    memory = initial_prompt
+    
+    return response.content, memory
